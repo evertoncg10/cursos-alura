@@ -1,0 +1,2 @@
+Clean Code: O que é, Casos de Uso, Exemplo de Código Limpo
+https://www.alura.com.br/artigos/o-que-e-clean-code
