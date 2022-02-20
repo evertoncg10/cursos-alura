@@ -1,7 +1,6 @@
 package br.com.everton.loja;
 
-import br.com.everton.loja.imposto.CalculadoraDeImpostos;
-import br.com.everton.loja.imposto.ICMS;
+import br.com.everton.loja.desconto.CalculadoraDeDescontos;
 import br.com.everton.loja.orcamento.Orcamento;
 
 import java.math.BigDecimal;
