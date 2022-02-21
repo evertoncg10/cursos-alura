@@ -1,6 +1,8 @@
 package br.com.everton.loja.pedido;
 
 import br.com.everton.loja.orcamento.Orcamento;
+import br.com.everton.loja.pedido.acao.EnviarEmailPedido;
+import br.com.everton.loja.pedido.acao.SalvarPedidoNoBancoDeDados;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +15,10 @@ public class GeraPedidoHandler {
         LocalDateTime data = LocalDateTime.now();
         Pedido pedido = new Pedido(dados.getCliente(), data, orcamento);
 
-        System.out.println("Salvar pedido no Banco de dados");
-        System.out.println("Enviar email com dados do novo pedido");
+        EnviarEmailPedido enviarEmailPedido = new EnviarEmailPedido();
+        SalvarPedidoNoBancoDeDados salvarPedidoNoBancoDeDados = new SalvarPedidoNoBancoDeDados();
+
+        enviarEmailPedido.executar(pedido);
+        salvarPedidoNoBancoDeDados.executar(pedido);
     }
 }
