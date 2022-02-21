@@ -1,6 +1,7 @@
 package br.com.everton.loja;
 
 import br.com.everton.loja.pedido.GeraPedido;
+import br.com.everton.loja.pedido.GeraPedidoHandler;
 
 import java.math.BigDecimal;
 
@@ -11,7 +12,8 @@ public class TestesPedidos {
         int quantidadeItens = Integer.parseInt(args[2]);
 
         GeraPedido gerador = new GeraPedido(cliente, valorOrcamento, quantidadeItens);
-        gerador.executa();
+        GeraPedidoHandler handler = new GeraPedidoHandler(/*dependencias*/);
+        handler.execute(gerador);
 
     }
 }
