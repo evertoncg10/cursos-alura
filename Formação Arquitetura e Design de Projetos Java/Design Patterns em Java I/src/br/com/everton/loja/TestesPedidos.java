@@ -1,18 +1,21 @@
 package br.com.everton.loja;
 
 import br.com.everton.loja.pedido.GeraPedido;
-import br.com.everton.loja.pedido.GeraPedidoHandler;
+import br.com.everton.loja.pedido.acao.EnviarEmailPedido;
+import br.com.everton.loja.pedido.acao.GeraPedidoHandler;
+import br.com.everton.loja.pedido.acao.SalvarPedidoNoBancoDeDados;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class TestesPedidos {
     public static void main(String[] args) {
-        String cliente = args[0];
-        BigDecimal valorOrcamento = new BigDecimal(args[1]);
-        int quantidadeItens = Integer.parseInt(args[2]);
+        String cliente = "Rodrigo";
+        BigDecimal valorOrcamento = new BigDecimal("300");
+        int quantidadeItens = Integer.parseInt("2");
 
         GeraPedido gerador = new GeraPedido(cliente, valorOrcamento, quantidadeItens);
-        GeraPedidoHandler handler = new GeraPedidoHandler(/*dependencias*/);
+        GeraPedidoHandler handler = new GeraPedidoHandler(Arrays.asList(new SalvarPedidoNoBancoDeDados(), new EnviarEmailPedido()));
         handler.execute(gerador);
 
     }

@@ -2,9 +2,10 @@ package br.com.everton.loja.pedido.acao;
 
 import br.com.everton.loja.pedido.Pedido;
 
-public class SalvarPedidoNoBancoDeDados {
+public class SalvarPedidoNoBancoDeDados implements AcaoAposGerarPedido{
 
-    public void executar(Pedido pedido) {
+    @Override
+    public void executarAcao(Pedido pedido) {
         System.out.println("Salvando Pedido no banco de dados.");
     }
 
