@@ -27,5 +27,4 @@ public class Pedido {
 	public Orcamento getOrcamento() {
 		return orcamento;
 	}
-
 }
